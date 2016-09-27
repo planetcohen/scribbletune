@@ -45,7 +45,7 @@
 			<pre><code>var scribble = require('scribbletune');
 
 var clip = scribble.clip({
-    notes: scribble.scale('c', 'major', 3), // root, scale and octave
+    notes: scribble.scale('c', 'major', 4), // root, scale and octave
     pattern: 'x_'.repeat(8) // `x` implies play a note
 });
 
@@ -91,7 +91,7 @@ var bass = scribble.clip({
 var hats = scribble.clip({
 	notes: ['h4'],
 	pattern: 'x'.repeat(16),
-	accentMap: 'x---x---x-x---x-
+	accentMap: 'x---x---x-x---x-'
 });
 
 // Render the 3 clips to MIDI files
