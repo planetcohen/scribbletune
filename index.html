@@ -46,7 +46,7 @@
 
 var clip = scribble.clip({
     notes: scribble.scale('c', 'major', 3), // root, scale and octave
-    pattern: 'x_x_x_x_x_x_x_x_' // `x` implies play a note
+    pattern: 'x_'.repeat(8) // `x` implies play a note
 });
 
 scribble.render(clip, 'cscale.mid');</code></pre>
@@ -77,25 +77,25 @@ scribble.render(chords, 'chords.mid');</code></pre>
  
 // 4 by 4 kick
 var kick = scribble.clip({
-	notes: ['c2'],
+	notes: ['c4'],
 	pattern: 'x---'.repeat(4)
 });
  
 // A simple bass line
 var bass = scribble.clip({
-	notes: scribble.scale('a', 'minor', 2).slice(0, 3),
-	pattern: '--x-'.repeat(4),
+	notes: scribble.scale('c#', 'harmonic major').filter((a, x) => x % 2 === 0),
+	pattern: 'xxx_xx_x',
 	shuffle: true
 });
 
 var hats = scribble.clip({
-	notes: ['a#4'],
+	notes: ['h4'],
 	pattern: 'x'.repeat(16),
-	sizzle: true
+	accentMap: 'x---x---x-x---x-
 });
 
 // Render the 3 clips to MIDI files
-scribble.midi(clip, 'bass.mid');
+scribble.midi(bass.concat(bass), 'bass.mid');
 scribble.midi(kick, 'kick.mid');
 scribble.midi(hats, 'hats.mid');</code></pre>
 			<p>Here's how that sounds when imported into Garage Band and rendered to a mp3 file.</p>
