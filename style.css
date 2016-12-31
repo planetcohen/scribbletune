@@ -1,13 +1,13 @@
 body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
 }
 
 .brand {
 	font-family: 'Pacifico', sans-serif;
 }
 
-a {
+a, a:visited {
 	color: #FF4D4D;
 }
 
@@ -26,4 +26,55 @@ pre {
 
 .hero {
 	font-size: 1.5em;
+}
+
+.meta {
+	font-size: 0.5em;
+	background: #eee;
+}
+
+.sidebar {
+	
+}
+
+.sidebar h3 {
+	color: silver;
+}
+
+ul.api-menu a {
+	padding: 5px;
+	display: inline-block;
+}
+
+ul.api-menu .selected {
+	font-weight: bold;
+}
+
+ul.api-sub-menu a {
+	color: gray;
+}
+
+.section {
+	margin-bottom: 40px; 
+}
+
+.section h4 {
+	display: inline-block;
+	background: #eee;
+	padding: 10px;
+}
+
+.section img {
+	max-width: 100%;
+}
+
+.section p strong {
+	display: inline-block;
+	background: #ffeded;
+	padding: 0 10px;
+}
+
+.section p em {
+	background: #FFFBED;
+	font-weight: bold;
 }
