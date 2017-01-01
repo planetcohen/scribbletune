@@ -120,16 +120,30 @@ var clip = scribble.clip({
 });
 
 scribble.midi(clip, 'hats.mid');</code></pre>
+					<p>Here's how that looks in a piano roll. The vertical lines on the bottoms suggest the volume of each note. They co-incide with the accentMap we setup:</p>
+					<p><img src="images/accentMap.png"></p>
+					<p><em>accentMap</em> can be set up by individual note values as well. You can pass an array of numbers that will be applied to each of the notes.</p>
+					<pre><code class="js">var scribble = require('scribbletune');
+
+	var clip = scribble.clip({
+		notes: ['c4'],
+		pattern: 'x'.repeat(16),
+		accentMap: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 127, 127, 127]
+	});
+
+	scribble.midi(clip);</code></pre>
+					<p>Here's how that looks. As you can see, the gradual change in the color of the note as well as the vertical lines on the bottom suggest the upward rise in the levels setup by our Number Array.</p>
+					<p><img src="images/accentMapNum.png"></p>
 				</div>
 
 				<div id="accentHi" class="section">
 					<h4>accentHi {Number} default 127</h4>
-					<p>This property lets you define what is 'hit hard' if you set up a <a href="#accentMap">accentMap</a>.</p>
+					<p>In case you used a string to setup an <em>accentMap</em>, then this property lets you define the level for each <strong>x</strong>.</p>
 				</div>
 
 				<div id="accentLow" class="section">
 					<h4>accentLow {Number} default 70</h4>
-					<p>This property lets you define what is 'hit soft' if you set up a <a href="#accentMap">accentMap</a>.</p>
+					<p>In case you used a string to setup an <em>accentMap</em>, then this property lets you define the level for each <strong>-</strong>.</p>
 				</div>
 
 				<div id="shuffle" class="section">
