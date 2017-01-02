@@ -41,22 +41,25 @@
 			
 			<p class="hero">Scribbletune is a Node.js module that helps you construct musical ideas with JavaScript String &amp; Array functions and export them as MIDI files! Let's jump right into into it,</p>
 			<pre><code class="bash">npm install scribbletune</code></pre>
-			<p>Let's put something together. Create a file called <em>c.js</em> and paste the following in it,</p>
+			<p>Let's put something together. Create a file called <em>chords.js</em> and paste the following in it,</p>
 			<pre><code>var scribble = require('scribbletune');
-
 var clip = scribble.clip({
-    notes: scribble.scale('c', 'major', 4), // root, scale and octave
-    pattern: 'x_'.repeat(8) // `x` implies play a note
-});
+    notes: ['F#m', 'C#m', 'Dmaj', 'Bm', 'Emaj', 'Amaj', 'Dmaj', 'C#m', 'Amaj'],
+    pattern: 'x_x_x_--'.repeat(8),
+    sizzle: true
+});  
 
-scribble.render(clip, 'cscale.mid');</code></pre>
+scribble.midi(clip, 'chords.mid');</code></pre>
 			<p>Now execute that file in the terminal at the same location as you saved it,</p>
-			<pre><code class="bash">node c.js</code></pre>
-			<p>This will generate a MIDI file called <em>cscale.mid</em> in the same location as you ran the above script.</p>
+			<pre><code class="bash">node chords.js</code></pre>
+			<p>This will generate a MIDI file called <em>chords.mid</em> in the same location as you executed this script. Here's how it sounded when I imported it into Garage Band and used the Synthesizer > EDM Chord > Sunrise Chords virtual instrument with a little reverb:</p>
+			<audio controls>
+				<source src="./chords.mp3" type="audio/mpeg">
+			</audio>
 		</div>
 		<hr>
 
-		<a href="documentation.html">Documentation</a></p>
+		Click here to view the <a href="documentation.html">documentation</a> and get inspired to create some music with JavaScript and Node.js!</p>
 		<p><strong>Make some noise. Show your love. <a href="https://github.com/walmik/scribbletune">★ Star this project on Github</a></strong></p>
 	</div> <!-- container -->
 
